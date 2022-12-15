@@ -1,5 +1,5 @@
 import { ITarefa } from '../../../types/itarefa';
-import style from '../lista.module.scss';
+import style from './item.module.scss';
 
 interface Props extends ITarefa {
     selecionaTarefa: (tarefaSelecionada: ITarefa) => void
@@ -15,7 +15,7 @@ export default function Item({
 
     return (
         <li
-            className={style.item}
+            className={`${style.item} ${selecionado ? style.itemSelecionado : ''}`}
             onClick={() => selecionaTarefa({
                 tarefa,
                 tempo,
